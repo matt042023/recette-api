@@ -33,3 +33,15 @@ restart: stop start.demon
 
 update:
 	$(EXEC) composer install
+
+entity:
+	$(EXEC) $(CONSOLE) make:entity
+
+migration:
+	$(EXEC) $(CONSOLE) make:migration
+
+migrate:
+	$(EXEC) $(CONSOLE) doctrine:migration:migrate
+
+require:
+	$(EXEC) composer require $(package)
